@@ -4,8 +4,11 @@
 
 
 ####
+> vs terminal e agee command daw
+>
+> wsl -d Ubuntu
 ```bash
-docker compose up -d
+docker start kafka
 ```
 ---
 
@@ -45,5 +48,18 @@ export class AppController implements OnModuleInit {
     console.log('DLQ Event Received:', data);
   }
 }
+```
+---
+
+
+#### ``
+```ts
+
+```
+---
+
+#### ``
+```ts
+
 ```
 ---
