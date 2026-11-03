@@ -1,19 +1,22 @@
 ## NestJS Microservices with Kafka (Implement Dead Letter Queue (DLQ))
 
-#### agee ei project complete kore---> [NestJS Microservices with Kafka (project)](https://github.com/Omarmdwasimuddin/NestJS-Microservice-Kafka)
+#### Prerequisite
+আগে এই project complete করে নাও:
+[NestJS Microservices with Kafka (project)](https://github.com/Omarmdwasimuddin/NestJS-Microservice-Kafka)
 
 
-####
-> vs terminal e agee command daw
->
-> wsl -d Ubuntu
+#### Start Kafka Broker
+> VS Code Terminal-এ প্রথমে command দাও।
+```bash
+wsl -d Ubuntu
+```
 ```bash
 docker start kafka
 ```
 ---
 
 
-#### `notification-service/src/app/app.controller.ts`
+#### Implement Dead Letter Queue (DLQ): `notification-service/src/app/app.controller.ts`
 ```ts
 import { Controller, Inject, OnModuleInit } from '@nestjs/common';
 import { ClientKafka, EventPattern, Payload } from '@nestjs/microservices';
@@ -82,16 +85,20 @@ export class AppModule {}
 ```
 ---
 
-#### 
+####  Run API Gateway
 ```bash
 npx nx serve api-gateway
 ```
+#### Run Notification Service
 ```bash
 npx nx serve notification-service
 ```
 ---
 
-#### OUTPUT
-> http://localhost:3000/create-user
-> 
+#### Test DLQ Implementation
+> Endpoint
+```bash
+http://localhost:3000/create-user
+```
+---
 > <img width="393" height="212" alt="image" src="https://github.com/user-attachments/assets/db10c1ce-ca37-4fc7-8cca-a877a3cb7e93" />
