@@ -86,4 +86,7 @@ export class AppModule {}
 ```bash
 npx nx serve api-gateway
 ```
+```bash
+npx nx serve notification-service
+```
 ---
